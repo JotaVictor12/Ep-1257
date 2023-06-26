@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h> 
+
+int main(){
+    int Hash, L, N;
+    char string[51];
+    
+    scanf("%d", &N);
+    for(int k = 0; k < N; ++k){
+        Hash = 0;
+        scanf("%d\n", &L);
+        
+        for(int i = 0; i < L; ++i){
+            scanf("%s\n", &string);
+            
+            for(int j = 0; j < strlen(string); ++j){
+                Hash += (string[j] - 'A') + i + j;
+            }
+        }
+        printf("%d\n", Hash);
+    }
+    return 0;
+}
